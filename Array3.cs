@@ -62,7 +62,7 @@ sealed class Array3 : BaseArray
         }
 
 
-        private void ArrUsInp()
+        protected override void ArrUsInp()
         {
 
             for (int i = 0; i < array.Length; i++)
@@ -79,7 +79,7 @@ sealed class Array3 : BaseArray
             }
         }
 
-        private void ArrRand()
+        protected override void ArrRand()
         {
             for (int i = 0; i < array.Length; i++)
             {

@@ -59,7 +59,7 @@ sealed class Array2 : BaseArray
 		}
 	}
 
-	private void ArrUsInp()
+	protected override void ArrUsInp()
 	{
     	Console.WriteLine("Введите элементы матрицы через пробел: ");
 		for (int i = 0; i < array.GetLength(0); i++)
@@ -72,7 +72,7 @@ sealed class Array2 : BaseArray
 		}
 	}
 
-	private void ArrRand()
+	protected override void ArrRand()
 	{
 		for (int i = 0; i < array.GetLength(0); i++)
 		{

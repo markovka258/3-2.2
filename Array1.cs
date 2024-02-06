@@ -37,7 +37,7 @@ sealed class Array1 : BaseArray
     }
 
 
-    private void ArrUsInp()
+    protected override void ArrUsInp()
     {
         Console.WriteLine($"Введите {array.Length} чисел:");
         for (int i = 0; i < array.Length; i++)
@@ -47,7 +47,7 @@ sealed class Array1 : BaseArray
     }
 
 
-    private  void ArrRand()
+    protected override void ArrRand()
     {
         for (int i = 0; i < array.Length; i++)
         {
