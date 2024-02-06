@@ -13,39 +13,39 @@ sealed class Array3 : BaseArray
             random = new Random();
 
             Console.Write("Enter the length of the array3: ");
-    string lengthInput = Console.ReadLine();
-    if (int.TryParse(lengthInput, out int length))
-    {
-        Console.Write("Enter 'true' for user input or 'false' for random input: ");
-        string usInpInput = Console.ReadLine();
-        if (bool.TryParse(usInpInput, out bool usInp))
+        string lengthInput = Console.ReadLine();
+        if (int.TryParse(lengthInput, out int length))
         {
-            array = new int[length][];
-
-            if (usInp)
+            Console.Write("Enter 'true' for user input or 'false' for random input: ");
+            string usInpInput = Console.ReadLine();
+            if (bool.TryParse(usInpInput, out bool usInp))
             {
-                ArrUsInp();
-            }
+                array = new int[length][];
 
+                if (usInp)
+                {
+                    ArrUsInp();
+                }
+
+                else
+                {
+                    ArrRand();
+                }
+            }
             else
             {
+                Console.WriteLine("Invalid input for usInp. Defaulting to random input.");
+                array = new int[length][];
                 ArrRand();
             }
         }
         else
         {
-            Console.WriteLine("Invalid input for usInp. Defaulting to random input.");
-            array = new int[length][];
+            Console.WriteLine("Invalid input for length. Defaulting to length of 10.");
+            array = new int[10][];
             ArrRand();
         }
     }
-    else
-    {
-        Console.WriteLine("Invalid input for length. Defaulting to length of 10.");
-        array = new int[10][];
-        ArrRand();
-    }
-}
 
 
         public override double CalculateAverage()
@@ -62,7 +62,7 @@ sealed class Array3 : BaseArray
         }
 
 
-        public void ArrUsInp()
+        private void ArrUsInp()
         {
 
             for (int i = 0; i < array.Length; i++)
@@ -73,13 +73,13 @@ sealed class Array3 : BaseArray
 
                 for (int j = 0; j < collumn; j++)
                 {
-                    Console.WriteLine($"элемент № {i}{j}");
+                    Console.WriteLine($"элемент {i}{j}:");
                     array[i][j] = int.Parse(Console.ReadLine());
                 }
             }
         }
 
-        public void ArrRand()
+        private void ArrRand()
         {
             for (int i = 0; i < array.Length; i++)
             {

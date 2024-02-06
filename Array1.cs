@@ -1,5 +1,3 @@
-using System.Runtime.CompilerServices;
-
 sealed class Array1 : BaseArray
 {
     private Random random;
@@ -39,7 +37,7 @@ sealed class Array1 : BaseArray
     }
 
 
-    public void ArrUsInp()
+    private void ArrUsInp()
     {
         Console.WriteLine($"Введите {array.Length} чисел:");
         for (int i = 0; i < array.Length; i++)
@@ -49,7 +47,7 @@ sealed class Array1 : BaseArray
     }
 
 
-    public  void ArrRand()
+    private  void ArrRand()
     {
         for (int i = 0; i < array.Length; i++)
         {
